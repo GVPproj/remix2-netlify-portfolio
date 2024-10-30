@@ -25,9 +25,7 @@ export default function App() {
       </head>
       <body>
         <SiteHeader />
-        <main>
-          <Outlet />
-        </main>
+        <main>{/* <Outlet /> */}</main>
         <SiteFooter />
         <ScrollRestoration />
         <Scripts />

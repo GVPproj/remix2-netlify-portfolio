@@ -1,7 +1,6 @@
-import React from "react"
-import Certificate from "../components/Cerificate"
-import { Link } from "@remix-run/react"
-import FadeUp from "../components/FadeUp"
+import Certificate from "../components/Cerificate";
+import { Link } from "@remix-run/react";
+import FadeUp from "../components/FadeUp";
 
 export default function Education() {
   return (
@@ -23,11 +22,11 @@ export default function Education() {
           <span className="font-light">(Click certificate to celebrate!)</span>
         </h4>
 
-        <Certificate
+        {/* <Certificate
           src="/images/scrim-cert.webp"
           alt="Graham Van Pelt's Scrimba Graduation Certificate"
-        />
+        /> */}
       </article>
     </FadeUp>
-  )
+  );
 }

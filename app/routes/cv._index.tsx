@@ -1,5 +1,4 @@
-import React from "react"
-import FadeUp from "../components/FadeUp"
+import FadeUp from "../components/FadeUp";
 
 export default function Experience() {
   return (
@@ -96,5 +95,5 @@ export default function Experience() {
         </>
       </FadeUp>
     </article>
-  )
+  );
 }

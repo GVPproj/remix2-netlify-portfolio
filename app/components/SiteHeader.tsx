@@ -1,6 +1,6 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 import { NavLink } from "@remix-run/react"
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import type { ReactNode } from "react"
 import {
   motion,
@@ -8,13 +8,16 @@ import {
   useAnimationControls,
   useReducedMotion,
 } from "framer-motion"
+import MenuIcon from "../assets/menu-icon.svg?react"
+import CloseIcon from "../assets/close-icon.svg?react"
+import Signature from "./Signature"
 
 const sleep = (s: number) =>
   new Promise((resolve) => setTimeout(resolve, s * 1000))
 
 export default function SiteHeader() {
   const [showNav, setShowNav] = useState(false)
-  let controls = useAnimationControls()
+  const controls = useAnimationControls()
 
   async function closeMenu() {
     await controls.start("closed")
@@ -29,8 +32,6 @@ export default function SiteHeader() {
     }
   }, [controls, showNav])
 
-  console.log(showNav)
-
   return (
     <header className="flex min-w-full justify-between p-6 transition-all md:py-12 lg:mb-8">
       <NavLink
@@ -42,7 +43,8 @@ export default function SiteHeader() {
         }
       >
         <div className="">
-          <svg
+          <Signature />
+          {/* <svg
             className="h-12 w-48 md:h-12 md:w-48 lg:h-16 lg:w-64"
             viewBox="-20 -20 1200 300"
             fill="none"
@@ -57,7 +59,7 @@ export default function SiteHeader() {
               strokeWidth="16"
               strokeLinecap="round"
             />
-          </svg>
+          </svg> */}
         </div>
       </NavLink>
 
@@ -85,38 +87,8 @@ export default function SiteHeader() {
       </nav>
       <DropdownMenu.Root open={showNav} onOpenChange={setShowNav}>
         <DropdownMenu.Trigger className="rounded px-1.5 focus:bg-skin-fill-muted focus:outline-none md:hidden">
-          {!showNav && (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="h-8 w-8"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
-          )}
-          {showNav && (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="h-8 w-8      "
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          )}
+          {!showNav && <MenuIcon className="h-8 w-8" />}
+          {showNav && <CloseIcon className="h-8 w-8" />}
         </DropdownMenu.Trigger>
         <AnimatePresence>
           <DropdownMenu.Portal>
@@ -174,8 +146,8 @@ function Item({
   onSelect?: () => void
   closeMenu: () => void
 }) {
-  let controls = useAnimationControls()
-  let shouldReduceMotion = useReducedMotion()
+  const controls = useAnimationControls()
+  const shouldReduceMotion = useReducedMotion()
   return (
     <DropdownMenu.Item
       onSelect={async (e) => {

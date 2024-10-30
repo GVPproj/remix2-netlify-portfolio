@@ -21,7 +21,7 @@ export default function Index() {
       transition={{ duration: 0.3 }}
     >
       <section className="mb-16 flex flex-col items-center gap-8 text-skin-base hover:text-skin-base md:flex-row md:justify-between">
-        <svg
+        {/* <svg
           viewBox="0 0 350 500"
           className="h-[340px] w-[300px] shrink-0 md:order-last "
         >
@@ -40,7 +40,7 @@ export default function Index() {
               />
             </g>
           </g>
-        </svg>
+        </svg> */}
         <p className="min-w-[320px] font-serif text-4xl font-semibold md:max-w-[20ch] md:text-5xl">
           A <span className="italic text-skin-accent ">Software Developer</span>
           {", "}

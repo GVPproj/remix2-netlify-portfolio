@@ -1,15 +1,23 @@
-import React from "react"
-import { Link } from "@remix-run/react"
-import Laptop from "./Laptop"
+import { Link } from "@remix-run/react";
+import Laptop from "./Laptop";
 
-export default function PortfolioItem(props: any) {
+interface Props {
+  title?: string;
+  url?: string;
+  screenshot?: string;
+  description?: string;
+  tooling: string[];
+  repo?: string;
+}
+
+export default function PortfolioItem(props: Props) {
   return (
     <>
       <div className="my-24 md:my-36">
         <div className="flex flex-col gap-12 xl:flex-row">
           <div className="min-w-max">
             {props.url ? (
-              <Link to={props.url} target="_blank" referrerPolicy="no-referrer">
+              <Link to={props.url} target="_blank" rel="noreferrer">
                 <Laptop
                   src={props.screenshot}
                   alt={"Visit this project: " + props.title}
@@ -26,11 +34,7 @@ export default function PortfolioItem(props: any) {
           <div className="flex flex-col justify-evenly gap-12 sm:flex-row">
             <div id="ToolingList" className="text-skin-muted md:min-w-max">
               {props.repo && (
-                <Link
-                  to={props.repo}
-                  target="_blank"
-                  referrerPolicy="no-referrer"
-                >
+                <Link to={props.repo} target="_blank" rel="noreferrer">
                   <div className="flex items-center gap-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -239,7 +243,7 @@ export default function PortfolioItem(props: any) {
               <Link
                 to={props.url || "#"}
                 target="_blank"
-                referrerPolicy="no-referrer"
+                rel="noreferrer"
                 className="font-sans text-xl font-semibold text-skin-accent no-underline"
               >
                 {props.title}
@@ -250,5 +254,5 @@ export default function PortfolioItem(props: any) {
         </div>
       </div>
     </>
-  )
+  );
 }
