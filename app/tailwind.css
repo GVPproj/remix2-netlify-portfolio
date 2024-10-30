@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  html {
+    --colour-text-base: #f4f4f5; /* main text */
+    --colour-text-muted: #e4e4e7;
+    --colour-accent: #e879f9; /* Link color */
+    --colour-highlight: #d946ef;
+    --colour-fill: #082f49;
+    --colour-fill-muted: #0c4a6e;
+  }
+}
+
+html {
+  @apply bg-skin-fill font-serif text-skin-base antialiased;
+}
+body {
+  @apply mx-auto flex h-screen max-w-screen-lg flex-col items-center overflow-y-scroll;
+}
+main {
+  @apply mx-auto mt-12  min-w-full p-6 md:mt-0;
+}
+
+article,
+aside {
+  @apply prose prose-zinc dark:prose-invert;
+}
+a {
+  @apply text-skin-accent no-underline transition-colors hover:text-skin-highlight;
+}
+p {
+  @apply font-sans text-lg;
+}
+span {
+  @apply italic;
+}
+.navLink {
+  @apply text-skin-base transition-colors hover:text-skin-highlight;
+}
+
+@font-face {
+  font-family: "Sfizia";
+  font-weight: 400;
+  src: url("/fonts/sfizia/sfizia-regular-webfont.woff") format("woff"),
+    url("/fonts/sfizia/sfizia-regular-webfont.woff2") format("woff2");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sfizia";
+  font-weight: 400;
+  src: url("/fonts/sfizia/sfizia-regularitalicno.2-webfont.woff") format("woff"),
+    url("/fonts/sfizia/sfizia-regularitalicno.2-webfont.woff2") format("woff2");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sfizia";
+  font-weight: 700;
+  src: url("/fonts/sfizia/sfizia-bold-webfont.woff") format("woff"),
+    url("/fonts/sfizia/sfizia-bold-webfont.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Wotfard";
+  font-weight: 100;
+  src: url("/fonts/wotfard/wotfard-thin-webfont.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Wotfard";
+  font-weight: 200;
+  src: url("/fonts/wotfard/wotfard-extralight-webfont.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Wotfard";
+  font-weight: 300;
+  src: url("/fonts/wotfard/wotfard-light-webfont.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Wotfard";
+  font-weight: 400;
+  src: url("/fonts/wotfard/wotfard-regular-webfont.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Wotfard";
+  font-weight: 500;
+  src: url("/fonts/wotfard/wotfard-medium-webfont.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Wotfard";
+  font-weight: 600;
+  src: url("/fonts/wotfard/wotfard-semibold-webfont.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Wotfard";
+  font-weight: 700;
+  src: url("/fonts/wotfard/wotfard-bold-webfont.woff2") format("woff2");
+  font-style: normal;
+}
