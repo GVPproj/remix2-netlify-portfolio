@@ -1,17 +1,17 @@
 import { motion } from "framer-motion"
-import React, { type ReactElement } from "react"
+import React from "react"
 
 interface FadeUpProps {
   delay?: number
   duration?: number
-  children: ReactElement
+  children: React.ReactElement
 }
 
-const FadeUp: React.FC = ({
+const FadeUp: React.FC<FadeUpProps> = ({
   children,
   delay = 0.1,
   duration = 0.6,
-}: FadeUpProps) => {
+}) => {
   return (
     <motion.div
       variants={{
