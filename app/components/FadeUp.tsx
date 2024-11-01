@@ -1,5 +1,4 @@
-import { motion } from "framer-motion"
-import React from "react"
+import React, { useState, useEffect } from "react"
 
 interface FadeUpProps {
   delay?: number
@@ -12,19 +11,42 @@ const FadeUp: React.FC<FadeUpProps> = ({
   delay = 0.1,
   duration = 0.6,
 }) => {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true)
+          observer.unobserve(entries[0].target)
+        }
+      },
+      { threshold: 1, rootMargin: "0px" }
+    )
+
+    const fadeUpElement = document.getElementById("fade-up")
+
+    if (fadeUpElement) {
+      observer.observe(fadeUpElement)
+    }
+
+    return () => {
+      if (fadeUpElement) {
+        observer.unobserve(fadeUpElement)
+      }
+      observer.disconnect()
+    }
+  }, [])
+
   return (
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 10 },
-        visible: { opacity: 1, y: 0 },
-      }}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ delay, type: "spring", duration }}
+    <div
+      id="fade-up"
+      className={`transition duration-${duration} delay-${delay} ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+      }`}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
