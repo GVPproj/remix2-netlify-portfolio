@@ -4,12 +4,14 @@ interface FadeUpProps {
   delay?: number
   duration?: number
   children: React.ReactElement
+  id: string
 }
 
 const FadeUp: React.FC<FadeUpProps> = ({
   children,
   delay = 0.1,
   duration = 0.6,
+  id,
 }) => {
   const [isVisible, setIsVisible] = useState(false)
 
@@ -18,13 +20,12 @@ const FadeUp: React.FC<FadeUpProps> = ({
       (entries) => {
         if (entries[0].isIntersecting) {
           setIsVisible(true)
-          observer.unobserve(entries[0].target)
         }
       },
-      { threshold: 1, rootMargin: "0px" }
+      { threshold: 0.5, rootMargin: "0px 0px -50px 0px" }
     )
 
-    const fadeUpElement = document.getElementById("fade-up")
+    const fadeUpElement = document.getElementById(id)
 
     if (fadeUpElement) {
       observer.observe(fadeUpElement)
@@ -36,12 +37,12 @@ const FadeUp: React.FC<FadeUpProps> = ({
       }
       observer.disconnect()
     }
-  }, [])
+  }, [id])
 
   return (
     <div
-      id="fade-up"
-      className={`transition duration-${duration} delay-${delay} ${
+      id={id}
+      className={`transition duration-${duration} delay-[${delay * 10000}ms] ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >

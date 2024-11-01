@@ -16,7 +16,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <FadeUp>
+    <FadeUp id="hero">
       <>
         <section className="mb-16 flex flex-col items-center gap-8 text-skin-base hover:text-skin-base md:flex-row md:justify-between">
           <p className="min-w-[320px] font-serif text-4xl font-semibold md:max-w-[20ch] md:text-5xl">

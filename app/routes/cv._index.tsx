@@ -3,7 +3,7 @@ import FadeUp from "../components/FadeUp"
 export default function Experience() {
   return (
     <article className="mx-auto font-sans lg:prose-lg lg:mx-0">
-      <FadeUp>
+      <FadeUp id="tipbox-experience">
         <>
           <h3>Software Developer @ Tipbox.io</h3>
           <h4>2023 - Present</h4>
@@ -27,7 +27,7 @@ export default function Experience() {
           </ul>
         </>
       </FadeUp>
-      <FadeUp delay={0.7}>
+      <FadeUp id="mythical-experience" delay={0.7}>
         <div>
           <h3>Web Developer / Audio Lead @ Mythical Voltage Games</h3>
           <h4>2020 - Present</h4>
@@ -45,7 +45,7 @@ export default function Experience() {
           </ul>
         </div>
       </FadeUp>
-      <FadeUp>
+      <FadeUp id="freelance-experience">
         <div>
           <h3>Freelance Web Developer</h3>
           <h4>2020 - 2023</h4>
@@ -72,7 +72,7 @@ export default function Experience() {
           </ul>
         </div>
       </FadeUp>
-      <FadeUp>
+      <FadeUp id="qualifications">
         <>
           <h2 className="pt-8 font-serif italic">Qualifications</h2>
           <div>
