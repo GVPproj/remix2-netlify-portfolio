@@ -1,6 +1,5 @@
 import React from "react"
 import PortfolioItem from "../components/PortfolioItem"
-import { motion } from "framer-motion"
 import type { PortfolioItemData } from "../data/portfolioData"
 import { portfolioItems } from "../data/portfolioData"
 import type { MetaFunction } from "@netlify/remix-runtime"
@@ -50,11 +49,7 @@ const Portfolio = () => {
   }>()
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 6 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-    >
+    <>
       <h1 className="mb-8 text-2xl font-extrabold md:text-4xl">
         <span>Collaborative Projects</span>
       </h1>
@@ -121,7 +116,7 @@ const Portfolio = () => {
           </React.Fragment>
         </FadeUp>
       ))}
-    </motion.div>
+    </>
   )
 }
 
