@@ -1,4 +1,9 @@
-export default function Laptop(props: any) {
+interface Props {
+  src: string
+  alt: string
+}
+
+export default function Laptop(props: Props) {
   return (
     <div>
       <div className="relative mx-auto h-[172px] max-w-[301px] rounded-t-xl border-[8px] border-gray-800 bg-gray-800 dark:border-gray-800 md:h-[294px] md:max-w-[512px]">
