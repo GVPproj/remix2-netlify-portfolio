@@ -1,5 +1,3 @@
-import React from "react"
-
 export default function Laptop(props: any) {
   return (
     <div>
