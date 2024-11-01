@@ -27,7 +27,7 @@ export default function Experience() {
           </ul>
         </>
       </FadeUp>
-      <FadeUp id="mythical-experience" delay={0.7}>
+      <FadeUp id="mythical-experience" delay={700}>
         <div>
           <h3>Web Developer / Audio Lead @ Mythical Voltage Games</h3>
           <h4>2020 - Present</h4>

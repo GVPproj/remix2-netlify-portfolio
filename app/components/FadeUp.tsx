@@ -9,8 +9,8 @@ interface FadeUpProps {
 
 const FadeUp: React.FC<FadeUpProps> = ({
   children,
-  delay = 0.1,
-  duration = 0.6,
+  delay = 150,
+  duration = 500,
   id,
 }) => {
   const [isVisible, setIsVisible] = useState(false)
@@ -42,8 +42,8 @@ const FadeUp: React.FC<FadeUpProps> = ({
   return (
     <div
       id={id}
-      className={`transition duration-${duration} delay-[${delay * 10000}ms] ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+      className={`transition-all duration-${duration} delay-${delay} ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
       }`}
     >
       {children}
