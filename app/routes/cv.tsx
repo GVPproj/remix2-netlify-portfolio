@@ -4,6 +4,7 @@ import Email from "../assets/email.svg?react"
 import Github from "../assets/github.svg?react"
 import LinkedIn from "../assets/linkedin.svg?react"
 import Music from "../assets/music.svg?react"
+import FadeIn from "~/components/FadeIn"
 
 export const meta = () => {
   return [
@@ -17,7 +18,7 @@ export const meta = () => {
 
 export default function CV() {
   return (
-    <>
+    <FadeIn>
       <section className="flex flex-col justify-between gap-12 lg:flex-row">
         <aside className="mx-auto flex flex-col font-sans lg:mx-0 lg:w-1/4 ">
           <img
@@ -90,6 +91,7 @@ export default function CV() {
             <NavLink
               preventScrollReset
               to="."
+              end
               className={({ isActive }) =>
                 isActive
                   ? "text-skin-accent no-underline"
@@ -99,7 +101,7 @@ export default function CV() {
               Experience
             </NavLink>
             <NavLink
-              to="education"
+              to="./education"
               end
               preventScrollReset
               className={({ isActive }) =>
@@ -115,6 +117,6 @@ export default function CV() {
           <Outlet />
         </section>
       </section>
-    </>
+    </FadeIn>
   )
 }

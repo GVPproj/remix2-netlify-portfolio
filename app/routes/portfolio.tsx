@@ -6,6 +6,7 @@ import type { MetaFunction } from "@netlify/remix-runtime"
 
 import { useLoaderData } from "@remix-run/react"
 import FadeUp from "../components/FadeUp"
+import FadeIn from "~/components/FadeIn"
 
 export const meta: MetaFunction = () => {
   return [
@@ -50,10 +51,14 @@ const Portfolio = () => {
 
   return (
     <>
-      <h1 className="mb-8 text-2xl font-extrabold md:text-4xl">
-        <span>Collaborative Projects</span>
-      </h1>
-      <p>Team-driven projects featuring my work.</p>
+      <FadeIn>
+        <>
+          <h1 className="mb-8 text-2xl font-extrabold md:text-4xl">
+            <span>Collaborative Projects</span>
+          </h1>
+          <p>Team-driven projects featuring my work.</p>
+        </>
+      </FadeIn>
       {projects.map((item, index) => (
         <FadeUp key={index} id={item.title}>
           <>

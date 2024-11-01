@@ -36,6 +36,8 @@ export default function Certificate(props: CertificateProps) {
         }}
       >
         <img
+          width={1000}
+          height={500}
           src={props.src}
           alt={props.alt}
           title="Celebrate?"

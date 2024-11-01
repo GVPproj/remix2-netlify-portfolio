@@ -44,7 +44,7 @@ const FadeUp: React.FC<FadeUpProps> = ({
       id={id}
       className={`transition-all ${delay} ${duration} ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-      }`}
+      } ease-in-out `}
     >
       {children}
     </div>

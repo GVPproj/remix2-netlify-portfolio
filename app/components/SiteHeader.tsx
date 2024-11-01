@@ -11,6 +11,7 @@ import {
 import MenuIcon from "../assets/menu-icon.svg?react"
 import CloseIcon from "../assets/close-icon.svg?react"
 import Sig from "./Sig"
+import FadeIn from "./FadeIn"
 
 const sleep = (s: number) =>
   new Promise((resolve) => setTimeout(resolve, s * 1000))
@@ -22,7 +23,7 @@ export default function SiteHeader() {
   async function closeMenu() {
     await controls.start("closed")
     setShowNav(false)
-    // here we are ensuring our menu animation finished before
+    // ensuring our menu animation finished before
     // dismissing the menu
   }
 
@@ -42,9 +43,9 @@ export default function SiteHeader() {
           isActive ? "stroke-skin-accent" : "navLink"
         }
       >
-        <div className="">
+        <FadeIn>
           <Sig />
-        </div>
+        </FadeIn>
       </NavLink>
 
       <nav className="hidden gap-6 self-center font-sans text-2xl font-medium md:flex lg:gap-8">
@@ -52,6 +53,7 @@ export default function SiteHeader() {
           to="cv"
           aria-label="Go to my CV."
           prefetch="intent"
+          end={false} // Set end to false to match child routes
           className={({ isActive }) =>
             isActive ? "text-skin-accent" : "navLink"
           }
