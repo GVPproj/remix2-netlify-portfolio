@@ -9,13 +9,13 @@
     --colour-text-muted: #e4e4e7;
     --colour-accent: #e879f9; /* Link color */
     --colour-highlight: #d946ef;
-    --colour-fill: #082f49;
+    --colour-fill: hsl(204, 80%, 15%);
     --colour-fill-muted: #0c4a6e;
   }
 }
 
 html {
-  @apply bg-skin-fill font-serif text-skin-base antialiased;
+  @apply bg-skin-fill font-serif text-skin-base antialiased bg-[radial-gradient(#e4e4e725_.25px,#082f4900_1px)] bg-[size:20px_20px]  bg-fixed;
 }
 body {
   @apply mx-auto flex h-screen max-w-screen-lg flex-col items-center overflow-y-scroll;
