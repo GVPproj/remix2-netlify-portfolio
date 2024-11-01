@@ -1,6 +1,6 @@
 // import Confetti from "react-confetti"
 import JSConfetti from "js-confetti"
-import React, { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect } from "react"
 
 type CertificateProps = {
   src: string
