@@ -3,11 +3,12 @@
 // import { motion } from "framer-motion"
 // import type { PortfolioItemData } from "../data/portfolioData"
 // import { portfolioItems } from "../data/portfolioData"
+// import type { MetaFunction } from "@netlify/remix-runtime"
 
 // import { useLoaderData } from "@remix-run/react"
 // import FadeUp from "../components/FadeUp"
 
-// export const meta = () => {
+// export const meta: MetaFunction = () => {
 //   return [
 //     { title: "Graham Van Pelt - Portfolio" },
 //     { property: "og:title", content: "Graham Van Pelt - Portfolio" },
