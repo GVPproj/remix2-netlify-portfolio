@@ -11,7 +11,6 @@ import {
 import MenuIcon from "../assets/menu-icon.svg?react"
 import CloseIcon from "../assets/close-icon.svg?react"
 import Sig from "./Sig"
-// import Signature from "./Signature.client"
 
 const sleep = (s: number) =>
   new Promise((resolve) => setTimeout(resolve, s * 1000))
