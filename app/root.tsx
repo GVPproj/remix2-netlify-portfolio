@@ -4,15 +4,15 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
-import tailwind from "./tailwind.css?url";
-import { LinksFunction } from "@remix-run/node";
-import SiteHeader from "./components/SiteHeader";
-import SiteFooter from "./components/SiteFooter";
+} from "@remix-run/react"
+import tailwind from "./tailwind.css?url"
+import { LinksFunction } from "@remix-run/node"
+import SiteHeader from "./components/SiteHeader"
+import SiteFooter from "./components/SiteFooter"
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: tailwind },
-];
+]
 
 export default function App() {
   return (
@@ -25,11 +25,13 @@ export default function App() {
       </head>
       <body>
         <SiteHeader />
-        <main>{/* <Outlet /> */}</main>
+        <main>
+          <Outlet />
+        </main>
         <SiteFooter />
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
-  );
+  )
 }

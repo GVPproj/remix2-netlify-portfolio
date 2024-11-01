@@ -5,13 +5,6 @@ import { netlifyPlugin } from "@netlify/remix-edge-adapter/plugin"
 import svgr from "vite-plugin-svgr"
 
 export default defineConfig({
-  plugins: [
-    remix({
-      ssr: false,
-    }),
-    netlifyPlugin(),
-    tsconfigPaths(),
-    svgr(),
-  ],
+  plugins: [remix(), netlifyPlugin(), tsconfigPaths(), svgr()],
   assetsInclude: ["**/*.svg"],
 })
