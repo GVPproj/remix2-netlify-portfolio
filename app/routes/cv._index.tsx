@@ -27,7 +27,7 @@ export default function Experience() {
           </ul>
         </>
       </FadeUp>
-      <FadeUp id="mythical-experience" delay={700}>
+      <FadeUp id="mythical-experience" delay="delay-200">
         <div>
           <h3>Web Developer / Audio Lead @ Mythical Voltage Games</h3>
           <h4>2020 - Present</h4>
@@ -74,7 +74,7 @@ export default function Experience() {
       </FadeUp>
       <FadeUp id="qualifications">
         <>
-          <h2 className="pt-8 font-serif italic">Qualifications</h2>
+          <h2 className="font-serif italic">Qualifications</h2>
           <div>
             <ul>
               <li>

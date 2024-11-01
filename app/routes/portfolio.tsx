@@ -55,7 +55,7 @@ const Portfolio = () => {
       </h1>
       <p>Team-driven projects featuring my work.</p>
       {projects.map((item, index) => (
-        <FadeUp key={index}>
+        <FadeUp key={index} id={item.title}>
           <>
             <PortfolioItem
               title={item.title}
@@ -69,13 +69,13 @@ const Portfolio = () => {
           </>
         </FadeUp>
       ))}
-      <FadeUp>
+      <FadeUp id="client">
         <h1 className="text-2xl font-extrabold md:text-4xl">
           <span>Client websites</span> and <span>personal projects</span>
         </h1>
       </FadeUp>
       {personal.map((item, index) => (
-        <FadeUp key={index}>
+        <FadeUp key={index} id={item.title}>
           <React.Fragment>
             <PortfolioItem
               title={item.title}
@@ -90,7 +90,7 @@ const Portfolio = () => {
         </FadeUp>
       ))}
 
-      <FadeUp>
+      <FadeUp id="eductional">
         <>
           <h1 className="mb-8 text-2xl font-extrabold md:text-4xl">
             <span>Educational Projects</span>
@@ -102,7 +102,7 @@ const Portfolio = () => {
         </>
       </FadeUp>
       {education.map((item, index) => (
-        <FadeUp key={index}>
+        <FadeUp key={index} id={item.title}>
           <React.Fragment>
             <PortfolioItem
               title={item.title}

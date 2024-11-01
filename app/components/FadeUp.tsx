@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react"
 
 interface FadeUpProps {
-  delay?: number
-  duration?: number
+  delay?: string
+  duration?: string
   children: React.ReactElement
   id: string
 }
 
 const FadeUp: React.FC<FadeUpProps> = ({
-  children,
-  delay = 150,
-  duration = 500,
   id,
+  delay = "delay-75",
+  duration = "duration-500",
+  children,
 }) => {
   const [isVisible, setIsVisible] = useState(false)
 
@@ -22,7 +22,7 @@ const FadeUp: React.FC<FadeUpProps> = ({
           setIsVisible(true)
         }
       },
-      { threshold: 0.5, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.5, rootMargin: "0px 0px 150px 0px" }
     )
 
     const fadeUpElement = document.getElementById(id)
@@ -42,7 +42,7 @@ const FadeUp: React.FC<FadeUpProps> = ({
   return (
     <div
       id={id}
-      className={`transition-all duration-${duration} delay-${delay} ${
+      className={`transition-all ${delay} ${duration} ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
       }`}
     >
