@@ -10,7 +10,7 @@
     --colour-accent: #e879f9; /* Link color */
     --colour-highlight: #d946ef;
     --colour-fill: hsl(204, 80%, 15%);
-    --colour-fill-muted: #0c4a6e;
+    --colour-fill-muted: hsl(204, 80%, 20%);
   }
 }
 

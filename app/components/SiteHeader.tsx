@@ -70,6 +70,16 @@ export default function SiteHeader() {
         >
           Portfolio
         </NavLink>
+        <NavLink
+          to="blog"
+          aria-label="Go to the Blog."
+          prefetch="intent"
+          className={({ isActive }) =>
+            isActive ? "text-skin-accent" : "navLink"
+          }
+        >
+          Blog
+        </NavLink>
       </nav>
       <DropdownMenu.Root open={showNav} onOpenChange={setShowNav}>
         <DropdownMenu.Trigger className="rounded px-1.5 focus:bg-skin-fill-muted focus:outline-none md:hidden">
@@ -111,6 +121,9 @@ export default function SiteHeader() {
                       className="max-w-max"
                     >
                       <Item closeMenu={closeMenu}>Portfolio</Item>
+                    </NavLink>
+                    <NavLink to="blog" prefetch="intent" className="max-w-max">
+                      <Item closeMenu={closeMenu}>Blog</Item>
                     </NavLink>
                   </>
                 )}
