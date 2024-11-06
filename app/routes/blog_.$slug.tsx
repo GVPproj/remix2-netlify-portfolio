@@ -18,12 +18,12 @@ const Post = () => {
   const record = useLoaderData<typeof loader>()
 
   return (
-    <section className="flex flex-col">
-      <div className="mx-auto prose">
-        <h1 className="mb-0 text-skin-accent text-4xl font-bold">
+    <article className="mx-auto flex flex-col">
+      <div className="prose mx-auto">
+        <h1 className="mb-0 text-4xl font-bold text-skin-accent">
           {record.title}
         </h1>
-        <h2 className="mt-4 text-lg text-skin-accent font-semibold">
+        <h2 className="mt-4 text-lg font-semibold text-skin-accent">
           {new Date(record.created).toLocaleDateString("en-CA", {
             month: "long",
             day: "numeric",
@@ -31,7 +31,7 @@ const Post = () => {
           })}
         </h2>
       </div>
-      <div className="prose-code:before:content-none prose-code:after:content-none mx-auto prose-pre:bg-skin-fill-muted prose-headings:text-skin-base prose-strong:text-skin-base text-skin-base prose prose-h1:text-skin-accent prose-code:bg-skin-fill-muted prose-code:text-skin-base prose-a:text-skin-accent prose-a:no-underline">
+      <div className="prose mx-auto max-w-full text-skin-base prose-headings:text-skin-base prose-h1:text-skin-accent prose-a:text-skin-accent prose-a:no-underline prose-strong:text-skin-base prose-code:bg-skin-fill-muted prose-code:text-skin-base prose-code:before:content-none prose-code:after:content-none prose-pre:bg-skin-fill-muted">
         <Markdown
           options={{
             overrides: {
@@ -42,7 +42,7 @@ const Post = () => {
           {record.markdown}
         </Markdown>
       </div>
-    </section>
+    </article>
   )
 }
 
@@ -67,7 +67,7 @@ const ClickPre: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <button onClick={handleCopy} className="w-full">
-      <pre className="text-left text-wrap w-full">{children}</pre>
+      <pre className="text-wrap break-words text-left">{children}</pre>
     </button>
   )
 }
